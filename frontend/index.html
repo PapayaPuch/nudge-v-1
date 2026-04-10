@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1f1828" />
+  <title>Nudge — A gentle nudge through your day</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body data-theme="cozy">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="app" aria-live="polite">
+    <header class="hero">
+      <h1>🫶 Nudge</h1>
+      <p>A gentle nudge through your day</p>
+      <button id="speakTimeBtn" class="hero-btn" aria-label="Speak current time">The time is --:--</button>
+    </header>
+
+    <section class="card">
+      <h2>Focus Timer</h2>
+      <div class="preset-row" id="presetRow"></div>
+      <div class="controls">
+        <input id="customMinutes" type="number" min="1" value="25" aria-label="Custom minutes" />
+        <button id="startTimerBtn">Start</button>
+        <button id="just5Btn" class="ghost">⚡ Just 5 minutes — you can do this</button>
+      </div>
+      <p id="timerStatus">Ready when you are.</p>
+    </section>
+
+    <section class="card">
+      <h2>How are you feeling right now?</h2>
+      <div class="mood-row">
+        <button data-mood="great">😊 Great</button>
+        <button data-mood="okay">😐 Okay</button>
+        <button data-mood="rough">😩 Rough</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Tasks</h2>
+      <form id="taskForm">
+        <input id="taskText" placeholder="One thing to focus on" required />
+        <select id="taskPriority">
+          <option value="high">High</option>
+          <option value="normal" selected>Normal</option>
+          <option value="low">Low</option>
+        </select>
+        <button>Add</button>
+      </form>
+      <ul id="taskList"></ul>
+    </section>
+
+
+    <section class="card">
+      <h2>Your Nudge Link</h2>
+      <p>Use this link anytime. It also works offline after first load.</p>
+      <div class="controls">
+        <input id="shareLink" readonly aria-label="Nudge app link" />
+        <button id="copyLinkBtn">Copy Link</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Stats</h2>
+      <div id="statsGrid" class="stats-grid"></div>
+    </section>
+  </main>
+
+  <section id="immersive" class="immersive hidden" aria-hidden="true">
+    <h2 id="immersiveTitle">Focus Session</h2>
+    <div class="timer-circle" id="timerCircle"><span id="timerDisplay">25:00</span></div>
+    <div class="controls">
+      <button id="pauseTimerBtn">Pause</button>
+      <button id="stopTimerBtn">Stop</button>
+    </div>
+  </section>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/speech.js"></script>
+  <script src="/js/sounds.js"></script>
+  <script src="/js/timer.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

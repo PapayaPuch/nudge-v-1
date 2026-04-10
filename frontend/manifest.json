@@ -1,0 +1,9 @@
+{
+  "name": "Nudge",
+  "short_name": "Nudge",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1f1828",
+  "theme_color": "#F4845F",
+  "icons": []
+}
